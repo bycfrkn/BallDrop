@@ -39,6 +39,7 @@ import { TooltipModule } from 'primeng/tooltip';
 @NgModule({
   declarations: [],
   imports: [
+    ChartModule,
     CommonModule,
     TableModule,
     InputTextModule,
@@ -78,6 +79,7 @@ import { TooltipModule } from 'primeng/tooltip';
     TooltipModule,
   ],
   exports: [
+    ChartModule,
     CommonModule,
     TableModule,
     InputTextModule,
