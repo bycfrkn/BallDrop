@@ -1,13 +1,20 @@
-<div class="relative w-full h-screen bg-[#eef3ff] overflow-hidden cursor-pointer">
-  <div *ngFor="let ball of balls"
-       class="absolute rounded-full shadow-md"
-       [ngStyle]="{
-         'width.px': ball.radius * 2,
-         'height.px': ball.radius * 2,
-         'left.px': ball.x - ball.radius,
-         'top.px': ball.y - ball.radius,
-         'background': ball.color,
-         'border-radius': '50%'
-       }">
+<div 
+  class="relative w-full h-screen bg-[#eef3ff] overflow-hidden cursor-pointer"
+  (click)="onSceneClick($event)"
+>
+  <div 
+    *ngIf="ball"
+    class="absolute rounded-full shadow-md transition-all duration-300"
+    [ngStyle]="{
+      'width.px': ball.radius * 2,
+      'height.px': ball.radius * 2,
+      'left.px': ball.x - ball.radius,
+      'top.px': ball.y - ball.radius,
+      'background': ball.color,
+      'border-radius': '50%'
+    }">
+  </div>
+  <div class="absolute bottom-4 left-4 text-gray-700 text-sm">
+    Y koordinatı: {{ (ballChange$ | async)?.y  }}
   </div>
 </div>
